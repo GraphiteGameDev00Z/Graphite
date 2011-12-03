@@ -21,11 +21,13 @@ namespace Graphite
         public Vector2 mouseDistance;
         public float stealthCoefficient;
         public float rotationAngle;
+        public float crossScale;
+        public bool firing;
 
 
         public void Initialize()
         {
-
+            
         }
 
         public void Update()
@@ -37,6 +39,8 @@ namespace Graphite
             {
                 active = false;
             }
+            stealthCoefficient = 1f;
+            
 
             KeyboardState CurrentState = Keyboard.GetState();
             //animation-related controls
@@ -45,18 +49,28 @@ namespace Graphite
             {
                 if (key == Keys.LeftControl)
                 {
-                    //crouch animation
+                    stealthCoefficient -= 0.3f;
                 }
                 if (key == Keys.LeftShift)
                 {
-                    //sprint animation
+                    stealthCoefficient += 0.2f;
                 }
+
   
             }
             MouseState currentMouseState = Mouse.GetState();
             mousePosition.X = currentMouseState.X - Game1.crosshairTexture.Width / 2;
             mousePosition.Y = currentMouseState.Y - Game1.crosshairTexture.Height / 2;
-            
+            if (currentMouseState.LeftButton == ButtonState.Pressed)
+            {
+                crossScale = 0.8f;
+                firing = true;
+            }
+            else
+            {
+                crossScale = 1f;
+                firing = false;
+            }
             mouseDistance = position - mousePosition;
 
             rotationAngle = (float)Math.Atan2(mouseDistance.X, mouseDistance.Y);         

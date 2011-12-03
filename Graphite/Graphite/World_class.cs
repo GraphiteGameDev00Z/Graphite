@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Graphite
 {
-    class Map_class
+    class World_class
     {
         public Vector2 velocity;
         public Vector2 position;
@@ -48,12 +48,12 @@ namespace Graphite
                 if (key == Keys.LeftShift && key != Keys.LeftControl)
                 {
                     //Tune this variable for more balanced sprinting speed
-                    maxSpeed = 8;
+                    maxSpeed += 3;
                 }
                 if (key == Keys.LeftControl && key != Keys.LeftShift)
                 {
                     //add in bool for crouching
-                    maxSpeed = 2;
+                    maxSpeed -= 3;
                 }
 
             }

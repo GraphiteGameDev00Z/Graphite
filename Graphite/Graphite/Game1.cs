@@ -25,9 +25,8 @@ namespace Graphite
         Vector2 position;
         Vector2 mapPosition;
         Vector2 mousePosition;
-        float rotationAngle;
         Player_class pc = new Player_class();
-        Map_class worldmap = new Map_class();
+        World_class worldmap = new World_class();
 
 
         public Game1()
@@ -107,8 +106,30 @@ namespace Graphite
 
             spriteBatch.Begin();
             spriteBatch.Draw(MapTexture, mapPosition, Color.White);
-            spriteBatch.Draw(playerTexture, position, null, Color.White, pc.rotationAngle * -1, new Vector2(playerTexture.Width / 2, playerTexture.Height / 2), new Vector2(1, 1), SpriteEffects.None, 0);
-            spriteBatch.Draw(crosshairTexture, new Vector2(mousePosition.X - crosshairTexture.Width / 2, mousePosition.Y - crosshairTexture.Height / 2), Color.White);
+
+            spriteBatch.Draw(
+                playerTexture, 
+                position, 
+                null, 
+                new Color(255, 255, 255, (byte)MathHelper.Clamp(pc.stealthCoefficient * 255, 0, 255)),
+                pc.rotationAngle * -1, 
+                new Vector2(playerTexture.Width / 2, playerTexture.Height / 2), 
+                new Vector2(1, 1), 
+                SpriteEffects.None, 
+                0
+                );
+
+            spriteBatch.Draw(
+                crosshairTexture, 
+                new Vector2(mousePosition.X - crosshairTexture.Width / 2, mousePosition.Y - crosshairTexture.Height / 2), 
+                null, 
+                Color.White,
+                0, 
+                new Vector2(crosshairTexture.Width / 2, crosshairTexture.Height / 2 ),
+                new Vector2(pc.crossScale, pc.crossScale),
+                SpriteEffects.None,
+                0
+                );
             spriteBatch.End();
           
             base.Draw(gameTime);

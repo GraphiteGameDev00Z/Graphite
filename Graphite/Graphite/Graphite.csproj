@@ -107,7 +107,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Map_class.cs" />
+    <Compile Include="StateManager.cs" />
+    <Compile Include="World_class.cs" />
     <Compile Include="Player_class.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
