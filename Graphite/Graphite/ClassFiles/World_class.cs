@@ -14,6 +14,7 @@ namespace Graphite
 {
     class World_class
     {
+        public bool CloseGame = false;
         public Vector2 velocity;
         public Vector2 position;
         public void Update()
@@ -29,6 +30,11 @@ namespace Graphite
             Keys[] currentPressedKeys = CurrentState.GetPressedKeys();
             foreach (Keys key in currentPressedKeys)
             {
+                // IF player Escape
+                if (key == Keys.Escape)
+                {
+                    CloseGame = true;
+                }
                 if (key == Keys.W)
                 {
                     velocity.Y = velocity.Y + 2;

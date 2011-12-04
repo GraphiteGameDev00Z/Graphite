@@ -107,9 +107,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StateManager.cs" />
-    <Compile Include="World_class.cs" />
-    <Compile Include="Player_class.cs" />
+    <Compile Include="ClassFiles\StateManager.cs" />
+    <Compile Include="ClassFiles\World_class.cs" />
+    <Compile Include="ClassFiles\Player_class.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />

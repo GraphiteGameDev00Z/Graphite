@@ -86,16 +86,16 @@ namespace Graphite
             //update thine map class
             worldmap.Update();
 
-            
-           
-
             //getting positions
             mapPosition = worldmap.position;
             position = pc.position;
             mousePosition = pc.mousePosition;
 
-            
-            
+            //Close Game
+            if (worldmap.CloseGame == true)
+            {
+                Environment.Exit(0);
+            }
             base.Update(gameTime);
             
         }

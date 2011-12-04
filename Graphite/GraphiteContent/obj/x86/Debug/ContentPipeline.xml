@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite\Graphite\Graphite\bin\x86\Debug\Content\1320811284797.xnb</Output>
-      <Time>2011-11-29T00:08:02.3575392-04:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Graphite\Graphite\bin\x86\Debug\Content\1320811284797.xnb</Output>
+      <Time>2011-12-03T19:20:34.8384144-04:00</Time>
     </Item>
     <Item>
       <Source>testmap.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite\Graphite\Graphite\bin\x86\Debug\Content\testmap.xnb</Output>
-      <Time>2011-11-30T19:30:45.0284362-04:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Graphite\Graphite\bin\x86\Debug\Content\testmap.xnb</Output>
+      <Time>2011-12-03T19:20:34.9254194-04:00</Time>
     </Item>
     <Item>
       <Source>MYSTERY-OF-THE-PORK.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite\Graphite\Graphite\bin\x86\Debug\Content\MYSTERY-OF-THE-PORK.xnb</Output>
-      <Time>2011-12-01T01:44:12.583075-04:00</Time>
+      <Output>C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Graphite\Graphite\bin\x86\Debug\Content\MYSTERY-OF-THE-PORK.xnb</Output>
+      <Time>2011-12-03T19:20:34.8624158-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -34,10 +34,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite\Graphite\GraphiteContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite\Graphite\Graphite\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite\Graphite\GraphiteContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite\Graphite\Graphite\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Graphite\GraphiteContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Graphite\Graphite\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Graphite\GraphiteContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Graphite\Graphite\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -66,7 +66,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-11-27T13:46:34.6287783-04:00</Value>
+        <Value>2011-11-28T13:35:31.262659-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
