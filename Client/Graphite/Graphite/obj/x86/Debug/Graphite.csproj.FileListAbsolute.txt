@@ -1,0 +1,12 @@
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Client\Graphite\Graphite\bin\x86\Debug\Graphite.exe
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Client\Graphite\Graphite\bin\x86\Debug\Graphite.pdb
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Client\Graphite\Graphite\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Client\Graphite\Graphite\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Client\Graphite\Graphite\obj\x86\Debug\Graphite.exe
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Client\Graphite\Graphite\obj\x86\Debug\Graphite.pdb
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Graphite\Graphite\bin\x86\Debug\Graphite.exe
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Graphite\Graphite\bin\x86\Debug\Graphite.pdb
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Graphite\Graphite\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Graphite\Graphite\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Graphite\Graphite\obj\x86\Debug\Graphite.exe
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Graphite\Graphite\obj\x86\Debug\Graphite.pdb

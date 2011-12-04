@@ -1,0 +1,2 @@
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Client\Graphite\GraphiteContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Client\Graphite\GraphiteContent\obj\x86\Debug\ResolveAssemblyReference.cache
