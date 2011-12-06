@@ -40,7 +40,7 @@ namespace ServerConsole
         static int[] intPlayerYs;
         static string[] strPlayersData;
         // MySQL Server Options
-        static string strMySQLServerInfo = "SERVER=Graphite.no-ip.org;" +
+        static string strMySQLServerInfo = "SERVER=192.168.1.101;" +
                                            "DATABASE=ServerData;" +
                                            "UID=root;" +
                                            "PASSWORD=13307A;";

@@ -17,7 +17,6 @@ namespace Graphite
         public LaunchScreen()
         {
             InitializeComponent();
-            LauncherTimer.Start();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -28,25 +27,23 @@ namespace Graphite
             //Check MySQL DATABASE
             mySQL.Login();
 
-            //TEMP
-            blnStartGame = true;
-            this.Hide();
-
             if (mySQL.blnCorrect == true)
             {
                 blnStartGame = true;
                 this.Hide();
             }
-            else { lblStatus.Text = "Incorrect Username Or Password"; }
-
-            
+            else { lblStatus.Text = "Password Or Username Incorrect"; }
         }
 
-        private void LauncherTimer_Tick(object sender, EventArgs e)
+        private void btnKeepDetail_CheckedChanged(object sender, EventArgs e)
         {
-            label1.Text = mySQL.TruePass;
-            label2.Text = mySQL.strPassword;
-            label3.Text = mySQL.strUsername;
+            if (btnKeepDetail.Checked == true) 
+            {
+                
+            }
+            if (btnKeepDetail.Checked == false)
+            {
+            }
         }
     }
 }

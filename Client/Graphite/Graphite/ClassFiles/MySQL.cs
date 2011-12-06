@@ -14,14 +14,16 @@ namespace Graphite
         //Login Variables
         public string strUsername;
         public string strPassword;
-        public string TruePass;
+        public string strTruePass;
         //MySQL Server Data
         static string strMySQLServerInfo = "SERVER=Graphite.no-ip.org;" +
                                            "DATABASE=ServerData;" +
                                            "UID=root;" +
                                            "PASSWORD=13307A;";
         MySqlConnection MySQLServer = new MySqlConnection(strMySQLServerInfo);
-
+        //Class Files
+        
+        //Player Login
         public void Login()
         {
             try
@@ -35,23 +37,33 @@ namespace Graphite
 
                     MySqlCommand mySQLCommand = MySQLServer.CreateCommand();
 
-                    mySQLCommand.CommandText = ("SELECT * FROM user_accounts WHERE user_name=" + strUsername);
+                    mySQLCommand.CommandText = ("SELECT * FROM user_accounts WHERE username= '" +strUsername+ "'");
+
                     mySQLReader = mySQLCommand.ExecuteReader();
 
                     while (mySQLReader.Read())
                     {
-                        TruePass = mySQLReader.GetString(1);
 
-                        if (strPassword == TruePass)
+                        strTruePass = mySQLReader.GetString(1);
+
+                        if (strPassword == strTruePass)
                         {
                             blnCorrect = true;
                             //Get Player Data
+                            int intUserID = mySQLReader.GetInt32(2);
+                            int intTeamID = mySQLReader.GetInt32(3);
+                            int LastXPos = mySQLReader.GetInt32(4);
+                            int LastYPos = mySQLReader.GetInt32(5);
+
                         }
                     }// End Read Loop
                 }
                 catch { }
             }
             catch { }
+            MySQLServer.Close();
+            //TEMP
+            blnCorrect = true;
         }
     }
 }

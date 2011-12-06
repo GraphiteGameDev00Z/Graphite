@@ -119,10 +119,10 @@
   <ItemGroup>
     <Compile Include="ClassFiles\TCPServer.cs" />
     <Compile Include="ClassFiles\WorldPlayers.cs" />
-    <Compile Include="LaunchScreen.cs">
+    <Compile Include="Forms\LaunchScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LaunchScreen.Designer.cs">
+    <Compile Include="Forms\LaunchScreen.Designer.cs">
       <DependentUpon>LaunchScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="ClassFiles\MySQL.cs" />
@@ -167,11 +167,9 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Forms\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="LaunchScreen.resx">
+    <EmbeddedResource Include="Forms\LaunchScreen.resx">
       <DependentUpon>LaunchScreen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
