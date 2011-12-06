@@ -17,56 +17,81 @@ namespace Graphite.ClassFiles
     {
         //Global Variables
 
-            //Players
+        //Players
 
-            //World
+        //World
 
-            //Non-Player Data
+        //Non-Player Data
         public int[] WeaponIDs;
 
         //Variables
-            //Player
-        Vector2 PlayerLoc;
-        Vector2 PMouseLoc;       
+        //Player (sent to server)
+        public Vector2 playerLoc;
+        public Vector2 pMouseLoc;
         string strUserName;
         int intUserID;
         int intTeamID;
         bool blnFiring = false;
+
         int intCurrentWeapID;
-        int[] intWeapSlot = {0,0,0};
+        int[] intWeapSlot = { 0, 0, 0 };
         int intHatID;
         int intExp;
         int intMoney;
-        
+        //Player (not sent to server)
+        Vector2 moveSpeed;
+
         //Sub Class Files
         TCPServer_Class TCPConnect = new TCPServer_Class();
 
         //Load On Game Start
         public void Initialize()
         {
-        
+
         }
         //Update Player Per Tick
         public void Update()
-        { 
-            //MOVEMENT~~
+        {
+            KeyboardState keystate = Keyboard.GetState();
+
+            if (keystate.IsKeyDown(Keys.LeftControl)) { moveSpeed -= new Vector2(2, 2); } //Crouching
+            else if (keystate.IsKeyDown(Keys.LeftShift)) { moveSpeed += new Vector2(2, 2); }//Sprinting
+
+            moveSpeed.Normalize(); //prevents moving faster diagonally
+
+            //gotta make these vars for keymapping
+            if (keystate.IsKeyDown(Keys.W)) { playerLoc.Y -= moveSpeed.Y; }
+            if (keystate.IsKeyDown(Keys.S)) { playerLoc.Y += moveSpeed.Y; }
+            if (keystate.IsKeyDown(Keys.A)) { playerLoc.X -= moveSpeed.X; }
+            if (keystate.IsKeyDown(Keys.D)) { playerLoc.X += moveSpeed.X; }
+
+
 
             //Change Weap F1-F2-F3-Scroll Wheel
-   
-            //Fire Current Weap
 
-            //SEND SERVER DATA
-            TCPConnect.SendServerData(strUserName, intUserID,Convert.ToInt32(PlayerLoc.X), Convert.ToInt32(PlayerLoc.Y),
-            Convert.ToInt32(PMouseLoc.X), Convert.ToInt32(PMouseLoc.Y), blnFiring, intCurrentWeapID);
+            MouseState mousestate = Mouse.GetState();
+
+
+
+
+            if (mousestate.LeftButton == ButtonState.Pressed)
+            {
+                blnFiring = true;
+            }
+
+            //SEND SERVER DATA (add playerWeight)
+            TCPConnect.SendServerData(strUserName, intUserID, Convert.ToInt32(playerLoc.X), Convert.ToInt32(playerLoc.Y),
+            Convert.ToInt32(pMouseLoc.X), Convert.ToInt32(pMouseLoc.Y), blnFiring, intCurrentWeapID);
 
             // GET SERVER DATA            
         }
         //Logged Into MySQL
+
         public void OnLoggedIn(string UserName, int UserID, int TeamID, Vector2 LastLocation,
                     int WeapSlot1, int WeapSlot2, int WeapSlot3, int HatID, int Money, int Exp)
         {
             //Update Player Variables From MySQL Database
-            PlayerLoc = LastLocation;
+            playerLoc = LastLocation;
             strUserName = UserName;
             intUserID = UserID;
             intTeamID = TeamID;
@@ -86,5 +111,6 @@ namespace Graphite.ClassFiles
         {
 
         }
+
     }
 }
