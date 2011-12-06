@@ -68,8 +68,16 @@ namespace Graphite.ClassFiles
 
 
             //Change Weap F1-F2-F3-Scroll Wheel
-   
-            //Fire Current Weap
+
+            MouseState mousestate = Mouse.GetState();
+
+            
+
+
+            if (mousestate.LeftButton == ButtonState.Pressed)
+            {
+                blnFiring = true;
+            }
 
             //SEND SERVER DATA (add playerWeight)
             TCPConnect.SendServerData(strUserName, intUserID,Convert.ToInt32(playerLoc.X), Convert.ToInt32(playerLoc.Y),
