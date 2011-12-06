@@ -11,10 +11,13 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace Graphite.ClassFiles
+
+
+namespace Graphite
 {
     class WorldPlayers
     {
+
         //Global Variables
 
         //Players
@@ -114,3 +117,6 @@ namespace Graphite.ClassFiles
 
     }
 }
+
+    
+

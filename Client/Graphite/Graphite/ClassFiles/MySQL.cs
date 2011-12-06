@@ -19,8 +19,10 @@ namespace Graphite
         static string strMySQLServerInfo = "SERVER=Graphite.no-ip.org;" +
                                            "DATABASE=ServerData;" +
                                            "UID=root;" +
-                                           "PASSWORD=13307A;";
+                                           "PASSWORD=13307A;"
         MySqlConnection MySQLServer = new MySqlConnection(strMySQLServerInfo);
+        //classfiles
+        WorldPlayers world = new WorldPlayers();
 
         public void Login()
         {
