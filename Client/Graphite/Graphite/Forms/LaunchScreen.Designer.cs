@@ -47,8 +47,10 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(12, 230);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(175, 20);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Tag = "";
             this.txtPassword.Text = "Password";
             // 
             // btnKeepDetail
@@ -98,6 +100,7 @@
             this.Name = "LaunchScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Graphite Launcher";
+            this.Load += new System.EventHandler(this.LaunchScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

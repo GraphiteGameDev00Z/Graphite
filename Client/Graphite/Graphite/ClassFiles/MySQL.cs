@@ -16,7 +16,7 @@ namespace Graphite
         public string strPassword;
         public string strTruePass;
         //MySQL Server Data
-        static string strMySQLServerInfo = "SERVER=Graphite.no-ip.org;" +
+        static string strMySQLServerInfo = "SERVER=graphite.no-ip.org;" +
                                            "DATABASE=ServerData;" +
                                            "UID=root;" +
                                            "PASSWORD=13307A;";
@@ -41,8 +41,8 @@ namespace Graphite
 
                     MySqlCommand mySQLCommand = MySQLServer.CreateCommand();
 
-                    mySQLCommand.CommandText = ("SELECT * FROM user_accounts WHERE username= '" +strUsername+ "'");
-
+                    mySQLCommand.CommandText = ("SELECT * FROM user_accounts WHERE user_name= '" +strUsername+ "'");
+                    mySQLCommand.Connection = MySQLServer; 
                     mySQLReader = mySQLCommand.ExecuteReader();
 
                     while (mySQLReader.Read())
@@ -66,8 +66,7 @@ namespace Graphite
             }
             catch { }
             MySQLServer.Close();
-            //TEMP
-            blnCorrect = true;
+
         }
     }
 }

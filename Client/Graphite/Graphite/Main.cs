@@ -23,7 +23,7 @@ namespace Graphite
         //--Sounds
 
         //Class Files
-
+        WorldPlayers WP = new WorldPlayers();
         //Variables
 
         public Main()

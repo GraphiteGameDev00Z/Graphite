@@ -118,7 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassFiles\TCPServer.cs" />
-    <Compile Include="ClassFiles\WorldPlayers.cs" />
     <Compile Include="Forms\LaunchScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +128,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="ClassFiles\WorldPlayers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,11 @@ namespace Graphite
 {
     public partial class LaunchScreen : Form
     {
+        //Global Variables
         public bool blnStartGame = false;
+        //Variables
+        private const string FILE_NAME = "PlayerSave.Sledge";
+        //Class Files
         MySQL mySQL = new MySQL();
 
         public LaunchScreen()
@@ -19,6 +24,10 @@ namespace Graphite
             InitializeComponent();
         }
 
+        private void LaunchScreen_Load(object sender, EventArgs e)
+        {
+
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             mySQL.strUsername = txtUserName.Text;
@@ -39,7 +48,22 @@ namespace Graphite
         {
             if (btnKeepDetail.Checked == true) 
             {
-                
+                if (File.Exists(FILE_NAME))
+                {
+                    return;
+                }
+                using (FileStream fs = new FileStream(FILE_NAME, FileMode.CreateNew))
+                {
+                    // Create the writer for data.
+                    using (BinaryWriter w = new BinaryWriter(fs))
+                    {
+                        // Write data to Test.data.
+                        for (int i = 0; i < 11; i++)
+                        {
+                            w.Write("HELLO");
+                        }
+                    }
+                }
             }
             if (btnKeepDetail.Checked == false)
             {

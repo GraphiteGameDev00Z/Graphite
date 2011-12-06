@@ -24,3 +24,13 @@ C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Clien
 C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Client\Graphite\Graphite\bin\x86\Debug\Content\TEMP\TEST.xnb
 C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Client\Graphite\Graphite\bin\x86\Debug\Graphite.exe
 C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Client\Graphite\Graphite\bin\x86\Debug\Graphite.pdb
+C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\bin\x86\Debug\Content\TEMP\TEST.xnb
+C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\bin\x86\Debug\Graphite.exe
+C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\bin\x86\Debug\Graphite.pdb
+C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\obj\x86\Debug\Graphite.LaunchScreen.resources
+C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\obj\x86\Debug\Graphite.exe
+C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\obj\x86\Debug\Graphite.pdb
