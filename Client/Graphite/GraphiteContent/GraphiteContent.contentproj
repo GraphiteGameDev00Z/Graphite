@@ -42,8 +42,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Art\" />
+    <Folder Include="Art\GUI\" />
+    <Folder Include="Art\Players\" />
+    <Folder Include="Art\Weapons\" />
+    <Folder Include="Fonts\" />
     <Folder Include="Sounds\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TEMP\TEST.png">
+      <Name>TEST</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

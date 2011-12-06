@@ -20,10 +20,10 @@ namespace Graphite
         IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse(strServerIP), 16487);
         TcpClient client = new TcpClient();
 
-        string strRecivedData;
+        public string strRecivedData;
         bool blnDataReceivedStart = false;
 
-        public void Initialize()
+        public void Connect()
         { 
             try
             {
@@ -32,10 +32,9 @@ namespace Graphite
             catch
             {
                 //COULD NOT CONNECT
-            }
-            
-        }
 
+            }        
+        }
         public void Threading()
         {
             Thread ReceiveDataThread = new Thread(new ThreadStart(ReceiveData));
@@ -50,17 +49,12 @@ namespace Graphite
             }
         }
 
-        public void Update()
-        {
-
-        }
-
         //SEND PLAYER DATA TO SERVER    --string--
         public void SendServerData(string strUserName, int intUSERID, int Xpos, int Ypos,
-            int MouseXpos, int MouseYpos, bool Fireing, int intCurrentWeapon)
+            int MouseXpos, int MouseYpos, bool Firing, int intCurrentWeapon)
         {
             string strData = strUserName + "~" + intUSERID.ToString() + "~" + Xpos.ToString() + "~" + Ypos.ToString() +
-   "~" + MouseXpos.ToString() + "~" + MouseYpos.ToString() + "~" + Fireing.ToString() +
+   "~" + MouseXpos.ToString() + "~" + MouseYpos.ToString() + "~" + Firing.ToString() +
    "~" + intCurrentWeapon.ToString() + "~";
 
             NetworkStream clientStream = client.GetStream();
@@ -71,7 +65,8 @@ namespace Graphite
             clientStream.Write(buffer, 0, buffer.Length);
             clientStream.Flush();
         }
-        // RECEIVE DATA FROM SERVER     --string--
+
+        // RECEIVE DATA FROM SERVER     --string-- 
         public void ReceiveData()
         {
             blnDataReceivedStart = true;
@@ -88,7 +83,7 @@ namespace Graphite
                 bytesRead = 0;
                 try
                 {
-                    //Blocks LOOP until a client sends Data
+                    //Blocks LOOP until a Server sends Data
                     bytesRead = clientStream.Read(DataRecived, 0, 4096);
                     clientStream.Flush();
                 }
@@ -99,14 +94,13 @@ namespace Graphite
                  }
                  if (bytesRead == 0)
                  {
-                    //the client has disconnected from the server
+                    //the Server has disconnected the Player
                     break;
                  }
-
                     //message has successfully been received
                     ASCIIEncoding encoder = new ASCIIEncoding();
-                    strRecivedData = (encoder.GetString(DataRecived, 0, bytesRead));  
-            }
+                    strRecivedData = (encoder.GetString(DataRecived, 0, bytesRead));
+            }//loop
         }
     }
 }

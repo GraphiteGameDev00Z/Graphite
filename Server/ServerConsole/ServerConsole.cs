@@ -21,9 +21,10 @@ namespace ServerConsole
         static int intNumUpdateSeconds;
         static Random Random = new Random();
         static int intNumClients = 0;
+        static int intEventLengthMIN = 0;
+        static int intUpdateFrequencyMIN = 0;
         // Socket Variables
         static TcpListener ServerSocket = new TcpListener(IPAddress.Any ,16487);
-
         // MySQL Variables
         static bool blnAllowConnect = false;
         static bool blnUpdateServer = true;
@@ -131,9 +132,6 @@ namespace ServerConsole
                 }              
             }
         }
-        //Variables
-        static int intEventLengthMIN = 0;
-        static int intUpdateFrequencyMIN = 0;
 
         //Download Server Config          --MySQL--
         static private void GetServerVariables()
@@ -295,10 +293,7 @@ namespace ServerConsole
             }
             mySQLPlayerUpdate.Close();
 
-            // RESET PLAYER ARRAY             X     Y
-            strPlayersData[UserID] = "~NUll~0~10000~10000~0~0~False~0";
-            intPlayerXs[UserID] = 10000;
-            intPlayerYs[UserID] = 10000;
+
 
         }
 
@@ -313,7 +308,7 @@ namespace ServerConsole
             int intPMouseY;
             bool blnFireing;
             int intCurrentWeap;
-            int intUSERID = 0;
+            int intUserID = 0;
 
             TcpClient tcpClient = (TcpClient)client;
             NetworkStream clientStream = tcpClient.GetStream();
@@ -360,9 +355,9 @@ namespace ServerConsole
                 foreach (string DataPoint in DataArray)
                 {
                     if (intDataCount == 0) { strUserName = DataPoint; }
-                    if (intDataCount == 1) { intUSERID = Convert.ToInt32(DataPoint); }
-                    if (intDataCount == 2) { intPlayerXs[intUSERID] = Convert.ToInt32(DataPoint); }
-                    if (intDataCount == 3) { intPlayerYs[intUSERID] = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 1) { intUserID = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 2) { intPlayerXs[intUserID] = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 3) { intPlayerYs[intUserID] = Convert.ToInt32(DataPoint); }
                     if (intDataCount == 4) { intPMouseX = Convert.ToInt32(DataPoint); }
                     if (intDataCount == 5) { intPMouseY = Convert.ToInt32(DataPoint); }
                     if (intDataCount == 6) { blnFireing = Convert.ToBoolean(DataPoint); }
@@ -370,7 +365,7 @@ namespace ServerConsole
                     intDataCount++;
                 }
                 //add recieved data to Return Data String
-                strPlayersData[intUSERID] = strRecivedData;
+                strPlayersData[intUserID] = strRecivedData;
                 //PROCESS DATA TO RETURN
 
                 //Clear ReturnData
@@ -378,10 +373,10 @@ namespace ServerConsole
 
                 for (int Index = 0; Index < intTotalAcounts; Index++)
                 {
-                    if (intPlayerXs[Index] + intPlayerProximity >= intPlayerXs[intUSERID] &&
-                        intPlayerXs[Index] - intPlayerProximity <= intPlayerXs[intUSERID]){
-                        if (intPlayerYs[Index] + intPlayerProximity >= intPlayerYs[intUSERID] &&
-                            intPlayerYs[Index] - intPlayerProximity <= intPlayerYs[intUSERID])
+                    if (intPlayerXs[Index] + intPlayerProximity >= intPlayerXs[intUserID] &&
+                        intPlayerXs[Index] - intPlayerProximity <= intPlayerXs[intUserID]){
+                        if (intPlayerYs[Index] + intPlayerProximity >= intPlayerYs[intUserID] &&
+                            intPlayerYs[Index] - intPlayerProximity <= intPlayerYs[intUserID])
                         {
                             //ADD PLAYER DATA TO SEND DATA STRING
                             strReturnData += strPlayersData[Index]+"@";
@@ -413,8 +408,13 @@ namespace ServerConsole
             // Save play Location on Quit
             if (blnUpdateServer == true)
             {
-                SavePlayerData(intUSERID, strUserName);
+                SavePlayerData(intUserID, strUserName);
             }
+            // RESET PLAYER ARRAY             X     Y
+            strPlayersData[intUserID] = "~NUll~0~10000~10000~0~0~False~0";
+            intPlayerXs[intUserID] = 10000;
+            intPlayerYs[intUserID] = 10000;
+
             intNumClients--;
             Console.WriteLine(Crlf + "Client Disconnected " + DateTime.Now.ToString("HH:mm:ss"));
             Console.WriteLine("Clients Connected = " + intNumClients.ToString()+Crlf);

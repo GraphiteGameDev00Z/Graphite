@@ -5,15 +5,21 @@ namespace Graphite
 #if WINDOWS || XBOX
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+
         static void Main(string[] args)
         {
-            using (Main game = new Main())
-            {
-                game.Run();
-            }
+           LaunchScreen Launcher = new LaunchScreen();
+           //Show Launcher Menu       
+           Launcher.ShowDialog();
+
+           if (Launcher.blnStartGame == true)
+           {
+               // Start Game
+               using (Main game = new Main())
+               {
+                    game.Run();
+               }
+           }
         }
     }
 #endif
