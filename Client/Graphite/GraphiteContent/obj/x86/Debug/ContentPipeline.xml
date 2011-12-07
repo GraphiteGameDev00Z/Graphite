@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\bin\x86\Debug\Content\TEMP\TEST.xnb</Output>
+      <Output>C:\Users\Jonathan\Documents\Graphite\Client\Graphite\Graphite\bin\x86\Debug\Content\TEMP\TEST.xnb</Output>
       <Time>2011-12-06T14:14:52.2267842-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -16,10 +16,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Jonathan\Documents\Projects\Client\Graphite\GraphiteContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Jonathan\Documents\Projects\Client\Graphite\GraphiteContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Jonathan\Documents\Graphite\Client\Graphite\GraphiteContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Jonathan\Documents\Graphite\Client\Graphite\Graphite\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Jonathan\Documents\Graphite\Client\Graphite\GraphiteContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Jonathan\Documents\Graphite\Client\Graphite\Graphite\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

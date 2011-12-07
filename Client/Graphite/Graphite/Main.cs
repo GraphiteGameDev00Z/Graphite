@@ -24,6 +24,7 @@ namespace Graphite
 
         //Class Files
         WorldPlayers WP = new WorldPlayers();
+        TCPServer_Class TCP = new TCPServer_Class();
         //Variables
 
         public Main()
@@ -35,8 +36,7 @@ namespace Graphite
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
- 
-
+            WP.Initialize();
             base.Initialize();
         }
         protected override void LoadContent()
@@ -52,9 +52,8 @@ namespace Graphite
         }
         protected override void Update(GameTime gameTime)
         {
-            //Exit Game
-
-
+            //Update WorldPlayers
+            WP.Update();
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)

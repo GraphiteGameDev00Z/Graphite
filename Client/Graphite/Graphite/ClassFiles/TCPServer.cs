@@ -21,56 +21,49 @@ namespace Graphite
         TcpClient client = new TcpClient();
 
         public string strRecivedData;
-        bool blnDataReceivedStart = false;
 
+        public bool Connected = false;
         public void Connect()
-        { 
+        {
             try
             {
+                Connected = true;
                 client.Connect(serverEndPoint);
             }
-            catch
-            {
-                //COULD NOT CONNECT
-
-            }        
+            catch { }
+                
         }
         public void Threading()
         {
             Thread ReceiveDataThread = new Thread(new ThreadStart(ReceiveData));
-            if (blnDataReceivedStart == false)
-            {
-                //START THREAD
+
                 ReceiveDataThread.Start();
-            }
-            if (CloseThread == true)
-            {
-                ReceiveDataThread.Abort();
-            }
+
         }
 
         //SEND PLAYER DATA TO SERVER    --string--
-        public void SendServerData(string strUserName, int intUSERID, int Xpos, int Ypos,
-            int MouseXpos, int MouseYpos, bool Firing, int intCurrentWeapon)
+        public void SendServerData(string strUserName, int intUSERID, int intTeamID, int Xpos, int Ypos,
+            int MouseXpos, int MouseYpos, bool Firing, int intCurrentWeapon, int HatID, int PlayerWeight)
         {
-            string strData = strUserName + "~" + intUSERID.ToString() + "~" + Xpos.ToString() + "~" + Ypos.ToString() +
+            string strData = strUserName + "~" + intUSERID.ToString() + "~" + intTeamID.ToString() +"~" + Xpos.ToString() + "~" + Ypos.ToString() +
    "~" + MouseXpos.ToString() + "~" + MouseYpos.ToString() + "~" + Firing.ToString() +
-   "~" + intCurrentWeapon.ToString() + "~";
+   "~" + intCurrentWeapon.ToString() + "~" + HatID.ToString() + "~" + PlayerWeight.ToString() + "~";
+            try
+            {
+                NetworkStream clientStream = client.GetStream();
 
-            NetworkStream clientStream = client.GetStream();
+                ASCIIEncoding encoder = new ASCIIEncoding();
+                byte[] buffer = encoder.GetBytes(strData);
 
-            ASCIIEncoding encoder = new ASCIIEncoding();
-            byte[] buffer = encoder.GetBytes(strData);
-
-            clientStream.Write(buffer, 0, buffer.Length);
-            clientStream.Flush();
+                clientStream.Write(buffer, 0, buffer.Length);
+                clientStream.Flush();
+            }
+            catch { }
         }
 
         // RECEIVE DATA FROM SERVER     --string-- 
         public void ReceiveData()
         {
-            blnDataReceivedStart = true;
-
             while (true)
             {
                 TcpClient tcpClient = (TcpClient)client;

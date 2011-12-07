@@ -11,19 +11,24 @@ namespace Graphite
         //Launch Game Variables
         public bool blnCorrect = false;
 
+        //BYPASS SQL LOGIN !!!!!
+        public bool blnBYPASS = true;
+        //----------------------
+
         //Login Variables
         public string strUsername;
         public string strPassword;
         public string strTruePass;
         //MySQL Server Data
-        static string strMySQLServerInfo = "SERVER=graphite.no-ip.org;" +
+        static string strMySQLServerInfo = "SERVER=192.168.1.101;" +
                                            "DATABASE=ServerData;" +
                                            "UID=root;" +
                                            "PASSWORD=13307A;";
         MySqlConnection MySQLServer = new MySqlConnection(strMySQLServerInfo);
 
         //classfiles
-        WorldPlayers world = new WorldPlayers();
+        WorldPlayers WP = new WorldPlayers();
+        TCPServer_Class TCP = new TCPServer_Class();
 
         //Class Files
         
@@ -53,11 +58,18 @@ namespace Graphite
                         if (strPassword == strTruePass)
                         {
                             blnCorrect = true;
-                            //Get Player Data
-                            int intUserID = mySQLReader.GetInt32(2);
-                            int intTeamID = mySQLReader.GetInt32(3);
-                            int LastXPos = mySQLReader.GetInt32(4);
-                            int LastYPos = mySQLReader.GetInt32(5);
+                            //Get Player Data  
+                            WP.strUserName = strUsername;
+                            WP.intUserID = mySQLReader.GetInt32(2);
+                            WP.intTeamID = mySQLReader.GetInt32(3);
+                            WP.playerLoc.X = mySQLReader.GetInt32(4);
+                            WP.playerLoc.Y = mySQLReader.GetInt32(5);
+                            WP.intWeapSlot[1] = mySQLReader.GetInt32(6);
+                            WP.intWeapSlot[2] = mySQLReader.GetInt32(7);
+                            WP.intWeapSlot[3] = mySQLReader.GetInt32(8);
+                            WP.intHatID = mySQLReader.GetInt32(9);
+                            WP.intMoney = mySQLReader.GetInt32(10);
+                            WP.intExp = mySQLReader.GetInt32(11);
 
                         }
                     }// End Read Loop
@@ -66,7 +78,6 @@ namespace Graphite
             }
             catch { }
             MySQLServer.Close();
-
         }
     }
 }

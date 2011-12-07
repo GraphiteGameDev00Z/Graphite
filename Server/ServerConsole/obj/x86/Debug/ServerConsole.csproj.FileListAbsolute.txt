@@ -13,3 +13,8 @@ C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Server\ServerConsole\obj\x86\D
 C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Server\ServerConsole\bin\Debug\ServerConsole.exe
 C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Server\ServerConsole\bin\Debug\ServerConsole.pdb
 C:\Users\Jonathan\Documents\Projects\Graphite\00Z\Server\ServerConsole\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Graphite\Server\ServerConsole\obj\x86\Debug\ServerConsole.exe
+C:\Users\Jonathan\Documents\Graphite\Server\ServerConsole\obj\x86\Debug\ServerConsole.pdb
+C:\Users\Jonathan\Documents\Graphite\Server\ServerConsole\bin\Debug\ServerConsole.exe
+C:\Users\Jonathan\Documents\Graphite\Server\ServerConsole\bin\Debug\ServerConsole.pdb
+C:\Users\Jonathan\Documents\Graphite\Server\ServerConsole\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -8,19 +8,19 @@ namespace Graphite
 
         static void Main(string[] args)
         {
-           LaunchScreen Launcher = new LaunchScreen();
-           //Show Launcher Menu       
-           Launcher.ShowDialog();
+            LaunchScreen Launcher = new LaunchScreen();
+            //Show Launcher Menu       
+            Launcher.ShowDialog();
 
-           if (Launcher.blnStartGame == true)
-           {
-               // Start Game
-               using (Main game = new Main())
-               {
+            if (Launcher.blnStartGame == true)
+            {
+                // Start Game
+                using (Main game = new Main())
+                {
                     game.Run();
-               }
-           }
-        }
+                }
+            }
+        } 
     }
 #endif
 }

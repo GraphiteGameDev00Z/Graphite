@@ -309,6 +309,9 @@ namespace ServerConsole
             bool blnFireing;
             int intCurrentWeap;
             int intUserID = 0;
+            int intHatID;
+            int intTeamID;
+            int intPlayerWeight;
 
             TcpClient tcpClient = (TcpClient)client;
             NetworkStream clientStream = tcpClient.GetStream();
@@ -356,12 +359,15 @@ namespace ServerConsole
                 {
                     if (intDataCount == 0) { strUserName = DataPoint; }
                     if (intDataCount == 1) { intUserID = Convert.ToInt32(DataPoint); }
-                    if (intDataCount == 2) { intPlayerXs[intUserID] = Convert.ToInt32(DataPoint); }
-                    if (intDataCount == 3) { intPlayerYs[intUserID] = Convert.ToInt32(DataPoint); }
-                    if (intDataCount == 4) { intPMouseX = Convert.ToInt32(DataPoint); }
-                    if (intDataCount == 5) { intPMouseY = Convert.ToInt32(DataPoint); }
-                    if (intDataCount == 6) { blnFireing = Convert.ToBoolean(DataPoint); }
-                    if (intDataCount == 7) { intCurrentWeap = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 2) { intTeamID = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 3) { intPlayerXs[intUserID] = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 4) { intPlayerYs[intUserID] = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 5) { intPMouseX = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 6) { intPMouseY = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 7) { blnFireing = Convert.ToBoolean(DataPoint); }
+                    if (intDataCount == 8) { intCurrentWeap = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 9) { intHatID = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 10) { intPlayerWeight = Convert.ToInt32(DataPoint); }
                     intDataCount++;
                 }
                 //add recieved data to Return Data String
