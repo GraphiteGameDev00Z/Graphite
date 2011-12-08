@@ -12,7 +12,7 @@ namespace Graphite
         public bool blnCorrect = false;
 
         //BYPASS SQL LOGIN !!!!!
-        public bool blnBYPASS = true;
+        public bool blnBYPASS = false;
         //----------------------
 
         //Login Variables
@@ -79,5 +79,6 @@ namespace Graphite
             catch { }
             MySQLServer.Close();
         }
+        //Up
     }
 }

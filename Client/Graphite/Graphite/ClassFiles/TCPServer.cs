@@ -14,15 +14,16 @@ namespace Graphite
     {
         //Global Variables
         public bool CloseThread = false;
-        
+        public string strRecivedData;
+
         //Variables
         static string strServerIP = "127.0.0.1";
         IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse(strServerIP), 16487);
         TcpClient client = new TcpClient();
 
-        public string strRecivedData;
-
         public bool Connected = false;
+
+        //Connect To Server
         public void Connect()
         {
             try
@@ -33,6 +34,7 @@ namespace Graphite
             catch { }
                 
         }
+        //Start Receive Thread
         public void Threading()
         {
             Thread ReceiveDataThread = new Thread(new ThreadStart(ReceiveData));

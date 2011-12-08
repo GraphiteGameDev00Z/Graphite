@@ -18,9 +18,20 @@ namespace Graphite
     {
 
         //Global Variables
-
+        public struct PlayerStructure
+        {
+            public string Username;
+            public int intUserID;
+            public int intTeamID;
+            public Vector2 PlayersPos;
+            public Vector2 PsMousePos;
+            public int intCurrentWeap;
+            public bool Firing;
+            public int intHat;
+            public int intStealthIndex;
+        }
         //Players
-
+        PlayerStructure[] Players;
         //World
 
         //Non-Player Data
@@ -37,7 +48,7 @@ namespace Graphite
         public bool blnFiring = false;
         public int intCurrentWeapID;
         public int intHatID;
-        int intPlayerWeight;
+        int intStealthIndex;
 
         //Player (not sent to server)
         Vector2 moveSpeed;        
@@ -83,12 +94,56 @@ namespace Graphite
 
             //Change Weap 1-2-3-Scroll Wheel
 
-                //SEND SERVER DATA (add )
-                TCPConnect.SendServerData(strUserName, intUserID, intTeamID, Convert.ToInt32(playerLoc.X), Convert.ToInt32(playerLoc.Y),
-                Convert.ToInt32(pMouseLoc.X), Convert.ToInt32(pMouseLoc.Y), blnFiring, intCurrentWeapID, intHatID, intPlayerWeight);
+            //SEND SERVER DATA
+            TCPConnect.SendServerData(strUserName, intUserID, intTeamID, Convert.ToInt32(playerLoc.X), Convert.ToInt32(playerLoc.Y),
+                Convert.ToInt32(pMouseLoc.X), Convert.ToInt32(pMouseLoc.Y), blnFiring, intCurrentWeapID, intHatID, intStealthIndex);
 
             // GET SERVER DATA
+            SplitReceivedData();
+
         }
+        private void SplitReceivedData()          
+        {
+            try{
+            int intPlayerCount = 0;
+            int intNumPlayer = 0;            
+            //Break String into DataPoints
+            string[] PlayerArray = TCPConnect.strRecivedData.Split('@');
+
+            foreach (string DataPoint in PlayerArray)
+            {
+                intNumPlayer++;
+            }
+            Players = new PlayerStructure[intNumPlayer];
+            foreach (string PlayerString in PlayerArray)
+            {
+                intPlayerCount++;
+
+                int CurrentDataPoint = 0;               
+                string[] PlayerData = PlayerString.Split('~');
+
+                foreach (string DataPoint in PlayerArray)
+                {
+                    if (CurrentDataPoint == 0) { Players[intPlayerCount].Username = DataPoint; }
+                    if (CurrentDataPoint == 1) { Players[intPlayerCount].intUserID = Convert.ToInt32(DataPoint); }
+                    if (CurrentDataPoint == 2) { Players[intPlayerCount].intTeamID = Convert.ToInt32(DataPoint); }
+                    if (CurrentDataPoint == 3) { Players[intPlayerCount].PlayersPos.X = Convert.ToInt32(DataPoint); }
+                    if (CurrentDataPoint == 4) { Players[intPlayerCount].PlayersPos.Y = Convert.ToInt32(DataPoint); }
+                    if (CurrentDataPoint == 5) { Players[intPlayerCount].PsMousePos.X = Convert.ToInt32(DataPoint); }
+                    if (CurrentDataPoint == 6) { Players[intPlayerCount].PsMousePos.Y = Convert.ToInt32(DataPoint); }
+                    if (CurrentDataPoint == 7) { Players[intPlayerCount].Firing = Convert.ToBoolean(DataPoint); }
+                    if (CurrentDataPoint == 8) { Players[intPlayerCount].intCurrentWeap = Convert.ToInt32(DataPoint); }
+                    if (CurrentDataPoint == 9) { Players[intPlayerCount].intHat = Convert.ToInt32(DataPoint); }
+                    if (CurrentDataPoint == 10) { Players[intPlayerCount].intStealthIndex = Convert.ToInt32(DataPoint); }
+                    CurrentDataPoint++;
+                }
+                }
+            }
+            catch
+            {
+            }
+        }
+
         //Update Player MySQL
         public void UpdatePlayerBase()
         {

@@ -311,7 +311,7 @@ namespace ServerConsole
             int intUserID = 0;
             int intHatID;
             int intTeamID;
-            int intPlayerWeight;
+            int intStealthIndex;
 
             TcpClient tcpClient = (TcpClient)client;
             NetworkStream clientStream = tcpClient.GetStream();
@@ -349,7 +349,7 @@ namespace ServerConsole
                 strRecivedData = (encoder.GetString(DataRecived, 0, bytesRead));
 
                 //PRINT DATA
-                Console.WriteLine(strRecivedData);
+                //Console.WriteLine(strRecivedData);
 
                 int intDataCount = 0;
                 //Break String into DataPoints
@@ -367,7 +367,7 @@ namespace ServerConsole
                     if (intDataCount == 7) { blnFireing = Convert.ToBoolean(DataPoint); }
                     if (intDataCount == 8) { intCurrentWeap = Convert.ToInt32(DataPoint); }
                     if (intDataCount == 9) { intHatID = Convert.ToInt32(DataPoint); }
-                    if (intDataCount == 10) { intPlayerWeight = Convert.ToInt32(DataPoint); }
+                    if (intDataCount == 10) { intStealthIndex = Convert.ToInt32(DataPoint); }
                     intDataCount++;
                 }
                 //add recieved data to Return Data String
