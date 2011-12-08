@@ -47,9 +47,10 @@
     <Folder Include="Art\Weapons\" />
     <Folder Include="Fonts\" />
     <Folder Include="Sounds\" />
+    <Folder Include="TEMP\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TEMP\TEST.png">
+    <Compile Include="TEST.png">
       <Name>TEST</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

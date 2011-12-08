@@ -20,7 +20,7 @@ namespace Graphite
         public string strPassword;
         public string strTruePass;
         //MySQL Server Data
-        static string strMySQLServerInfo = "SERVER=192.168.1.101;" +
+        static string strMySQLServerInfo = "SERVER=Graphite.no-ip.org;" +
                                            "DATABASE=ServerData;" +
                                            "UID=root;" +
                                            "PASSWORD=13307A;";

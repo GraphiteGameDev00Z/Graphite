@@ -21,7 +21,6 @@ C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Clien
 C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Client\Graphite\Graphite\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Client\Graphite\Graphite\obj\x86\Debug\Graphite.exe
 C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Client\Graphite\Graphite\obj\x86\Debug\Graphite.pdb
-C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Client\Graphite\Graphite\bin\x86\Debug\Content\TEMP\TEST.xnb
 C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Client\Graphite\Graphite\bin\x86\Debug\Graphite.exe
 C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Client\Graphite\Graphite\bin\x86\Debug\Graphite.pdb
 C:\Users\Jonathan\Documents\Projects\Client\Graphite\Graphite\bin\x86\Debug\Content\TEMP\TEST.xnb
@@ -44,3 +43,4 @@ C:\Users\Jonathan\Documents\Graphite\Client\Graphite\Graphite\obj\x86\Debug\Gene
 C:\Users\Jonathan\Documents\Graphite\Client\Graphite\Graphite\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Jonathan\Documents\Graphite\Client\Graphite\Graphite\obj\x86\Debug\Graphite.exe
 C:\Users\Jonathan\Documents\Graphite\Client\Graphite\Graphite\obj\x86\Debug\Graphite.pdb
+C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Client\Graphite\Graphite\bin\x86\Debug\Content\TEST.xnb

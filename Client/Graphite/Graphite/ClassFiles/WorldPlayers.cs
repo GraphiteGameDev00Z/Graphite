@@ -97,7 +97,7 @@ namespace Graphite
             //Change Weap 1-2-3-Scroll Wheel
 
             //SEND SERVER DATA
-            TCPConnect.SendServerData(strUserName, intUserID, intTeamID, Convert.ToInt32(playerLoc.X), Convert.ToInt32(playerLoc.Y),
+                TCPConnect.SendServerData(strUserName, intUserID, intTeamID, Convert.ToInt32(playerLoc.X), Convert.ToInt32(playerLoc.Y),
                 Convert.ToInt32(pMouseLoc.X), Convert.ToInt32(pMouseLoc.Y), blnFiring, intCurrentWeapID, intHatID, intStealthIndex);
 
             // GET SERVER DATA

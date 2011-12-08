@@ -18,7 +18,8 @@ namespace Graphite
         SpriteBatch spriteBatch;
         Color BackColour = Color.Lavender;
 
-        //--Sprites
+        Texture2D playerSprite;
+        
 
         //--Sounds
 
@@ -41,7 +42,9 @@ namespace Graphite
         }
         protected override void LoadContent()
         {
+            
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            playerSprite = Content.Load<Texture2D>(@"content/TEST");
 
             //load game content
 
@@ -60,11 +63,14 @@ namespace Graphite
         {
             GraphicsDevice.Clear(BackColour);
             //DRAW
-            for (int i = 1; i < WP.intNumPlayer; i++)
+            spriteBatch.Begin();
+
+            for (int i = 0; i < WP.intNumPlayer; i++)
             {
-            //  WP.Players[i].Username;
+                spriteBatch.Draw(playerSprite, WP.Players[i].PlayersPos, Color.White);
             }
             base.Draw(gameTime);
+            spriteBatch.End();
         }
     }
 }

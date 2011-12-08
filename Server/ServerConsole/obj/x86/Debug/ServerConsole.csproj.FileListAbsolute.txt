@@ -18,3 +18,5 @@ C:\Users\Jonathan\Documents\Graphite\Server\ServerConsole\obj\x86\Debug\ServerCo
 C:\Users\Jonathan\Documents\Graphite\Server\ServerConsole\bin\Debug\ServerConsole.exe
 C:\Users\Jonathan\Documents\Graphite\Server\ServerConsole\bin\Debug\ServerConsole.pdb
 C:\Users\Jonathan\Documents\Graphite\Server\ServerConsole\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Server\ServerConsole\obj\x86\Debug\ServerConsole.exe
+C:\Users\Graeme\Documents\Visual Studio 2010\Projects\Graphite II\Graphite\Server\ServerConsole\obj\x86\Debug\ServerConsole.pdb
