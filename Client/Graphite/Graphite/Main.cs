@@ -60,9 +60,10 @@ namespace Graphite
         {
             GraphicsDevice.Clear(BackColour);
             //DRAW
-
-
-
+            for (int i = 1; i < WP.intNumPlayer; i++)
+            {
+            //  WP.Players[i].Username;
+            }
             base.Draw(gameTime);
         }
     }

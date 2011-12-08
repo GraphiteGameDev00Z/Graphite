@@ -31,7 +31,8 @@ namespace Graphite
             public int intStealthIndex;
         }
         //Players
-        PlayerStructure[] Players;
+        public PlayerStructure[] Players; // USE TO DRAW PLAYERS and MATH STUFFS ?
+        public int intNumPlayer = 0;
         //World
 
         //Non-Player Data
@@ -55,7 +56,8 @@ namespace Graphite
         public int[] intWeapSlot = { 0, 0, 0 };
         public int intExp;
         public int intMoney;
-        //Sub Class Files
+        public int intPlayerWeight;
+        //Class Files
         TCPServer_Class TCPConnect = new TCPServer_Class();
 
         //Load On Game Start
@@ -102,11 +104,12 @@ namespace Graphite
             SplitReceivedData();
 
         }
+        //SPIT DATA
         private void SplitReceivedData()          
         {
             try{
             int intPlayerCount = 0;
-            int intNumPlayer = 0;            
+            intNumPlayer = 0;            
             //Break String into DataPoints
             string[] PlayerArray = TCPConnect.strRecivedData.Split('@');
 
