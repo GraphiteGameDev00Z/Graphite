@@ -16,6 +16,7 @@ namespace Graphite
 {
     class WorldPlayers
     {
+        //
 
         //Global Variables
         public struct PlayerStructure
@@ -38,7 +39,7 @@ namespace Graphite
         //Non-Player Data
         public int[] WeaponIDs;
         public int[] HatIDs;
-
+         
         //Variables
         //Player (sent to server)
         public Vector2 playerLoc;

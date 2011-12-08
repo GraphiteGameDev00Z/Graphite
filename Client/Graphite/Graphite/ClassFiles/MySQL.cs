@@ -8,6 +8,7 @@ namespace Graphite
 {
     class MySQL
     {
+        //
         //Launch Game Variables
         public bool blnCorrect = false;
 

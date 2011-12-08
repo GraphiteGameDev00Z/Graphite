@@ -19,7 +19,7 @@ namespace Graphite
         Color BackColour = Color.Lavender;
 
         //--Sprites
-
+        //NEURRR
         //--Sounds
 
         //Class Files
@@ -62,7 +62,7 @@ namespace Graphite
             //DRAW
             for (int i = 1; i < WP.intNumPlayer; i++)
             {
-            //  WP.Players[i].Username;
+                //WP.Players[i].Username;
             }
             base.Draw(gameTime);
         }
