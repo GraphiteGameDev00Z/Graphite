@@ -13,7 +13,7 @@ namespace Graphite
         public bool blnCorrect = false;
 
         //BYPASS SQL LOGIN !!!!!
-        public bool blnBYPASS = false;
+        public bool blnBYPASS = true;
         //----------------------
 
         //Login Variables
